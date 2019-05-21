@@ -11,6 +11,4 @@ use Spryker\Zed\Kernel\AbstractBundleConfig;
 
 class PersistentCartShareConfig extends AbstractBundleConfig
 {
-    public const RESOURCE_TYPE_QUOTE = 'quote';
-    public const SHARE_OPTION_PREVIEW = 'PREVIEW';
 }
