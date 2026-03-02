@@ -29,11 +29,6 @@ class PersistentCartShareDependencyProvider extends AbstractDependencyProvider
      */
     public const PLUGINS_CART_SHARE_OPTION = 'PLUGINS_CART_SHARE_OPTION';
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     public function provideServiceLayerDependencies(Container $container): Container
     {
         $container = parent::provideServiceLayerDependencies($container);
@@ -45,11 +40,6 @@ class PersistentCartShareDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addResourceShareClient(Container $container): Container
     {
         $container->set(static::CLIENT_RESOURCE_SHARE, function (Container $container) {
@@ -59,11 +49,6 @@ class PersistentCartShareDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addZedRequestClient(Container $container): Container
     {
         $container->set(static::CLIENT_ZED_REQUEST, function (Container $container) {
@@ -75,11 +60,6 @@ class PersistentCartShareDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addCartShareOptionPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_SHARE_OPTION, function () {

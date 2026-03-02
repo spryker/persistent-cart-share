@@ -25,21 +25,11 @@ class PersistentCartShareToResourceShareFacadeBridge implements PersistentCartSh
         $this->resourceShareFacade = $resourceShareFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareResponseTransfer
-     */
     public function getResourceShareByUuid(ResourceShareRequestTransfer $resourceShareRequestTransfer): ResourceShareResponseTransfer
     {
         return $this->resourceShareFacade->getResourceShareByUuid($resourceShareRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareResponseTransfer
-     */
     public function activateResourceShare(ResourceShareRequestTransfer $resourceShareRequestTransfer): ResourceShareResponseTransfer
     {
         return $this->resourceShareFacade->activateResourceShare($resourceShareRequestTransfer);

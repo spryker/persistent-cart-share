@@ -25,11 +25,6 @@ class PersistentCartShareToResourceShareClientBridge implements PersistentCartSh
         $this->resourceShareClient = $resourceShareClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareResponseTransfer
-     */
     public function generateResourceShare(ResourceShareRequestTransfer $resourceShareRequestTransfer): ResourceShareResponseTransfer
     {
         return $this->resourceShareClient->generateResourceShare($resourceShareRequestTransfer);

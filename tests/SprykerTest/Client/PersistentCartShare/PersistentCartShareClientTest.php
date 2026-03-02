@@ -42,9 +42,6 @@ class PersistentCartShareClientTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGetCartShareOptionsShouldReturnCorrectStructure(): void
     {
         // Arrange

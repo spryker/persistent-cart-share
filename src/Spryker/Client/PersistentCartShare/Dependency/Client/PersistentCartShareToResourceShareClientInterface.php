@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\ResourceShareResponseTransfer;
 
 interface PersistentCartShareToResourceShareClientInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareResponseTransfer
-     */
     public function generateResourceShare(ResourceShareRequestTransfer $resourceShareRequestTransfer): ResourceShareResponseTransfer;
 }

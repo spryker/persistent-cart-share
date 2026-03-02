@@ -39,10 +39,6 @@ class QuoteReader implements QuoteReaderInterface
      */
     protected $quoteFacade;
 
-    /**
-     * @param \Spryker\Zed\PersistentCartShare\Dependency\Facade\PersistentCartShareToResourceShareFacadeInterface $resourceShareFacade
-     * @param \Spryker\Zed\PersistentCartShare\Dependency\Facade\PersistentCartShareToQuoteFacadeInterface $quoteFacade
-     */
     public function __construct(
         PersistentCartShareToResourceShareFacadeInterface $resourceShareFacade,
         PersistentCartShareToQuoteFacadeInterface $quoteFacade
@@ -51,11 +47,6 @@ class QuoteReader implements QuoteReaderInterface
         $this->quoteFacade = $quoteFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function getPreviewQuoteResourceShare(ResourceShareRequestTransfer $resourceShareRequestTransfer): QuoteResponseTransfer
     {
         $resourceShareResponseTransfer = $this->resourceShareFacade->getResourceShareByUuid($resourceShareRequestTransfer);
@@ -70,11 +61,6 @@ class QuoteReader implements QuoteReaderInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareTransfer $resourceShareTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     protected function getQuoteByResourceShare(ResourceShareTransfer $resourceShareTransfer): QuoteResponseTransfer
     {
         $resourceShareTransfer->requireResourceShareData()
@@ -107,11 +93,6 @@ class QuoteReader implements QuoteReaderInterface
         return $quoteResponseTransferErrors;
     }
 
-    /**
-     * @param string $message
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     protected function createQuoteResponseTransferWithQuoteError(string $message): QuoteResponseTransfer
     {
         $quoteErrorTransfers = new ArrayObject();
@@ -125,11 +106,6 @@ class QuoteReader implements QuoteReaderInterface
             ->setErrors($quoteErrorTransfers);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareResponseTransfer $resourceShareResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer|null
-     */
     protected function validateResourceShareResponse(ResourceShareResponseTransfer $resourceShareResponseTransfer): ?QuoteResponseTransfer
     {
         if (!$resourceShareResponseTransfer->getIsSuccessful()) {
@@ -155,11 +131,6 @@ class QuoteReader implements QuoteReaderInterface
         return null;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteResponseTransfer $quoteResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     protected function validateQuoteResponse(QuoteResponseTransfer $quoteResponseTransfer): QuoteResponseTransfer
     {
         if (!$quoteResponseTransfer->getIsSuccessful()) {

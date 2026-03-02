@@ -19,9 +19,6 @@ use Spryker\Zed\PersistentCartShare\PersistentCartShareDependencyProvider;
  */
 class PersistentCartShareBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\PersistentCartShare\Business\Reader\QuoteReaderInterface
-     */
     public function createQuoteReader(): QuoteReaderInterface
     {
         return new QuoteReader(
@@ -30,17 +27,11 @@ class PersistentCartShareBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PersistentCartShare\Dependency\Facade\PersistentCartShareToResourceShareFacadeInterface
-     */
     public function getResourceShareFacade(): PersistentCartShareToResourceShareFacadeInterface
     {
         return $this->getProvidedDependency(PersistentCartShareDependencyProvider::FACADE_RESOURCE_SHARE);
     }
 
-    /**
-     * @return \Spryker\Zed\PersistentCartShare\Dependency\Facade\PersistentCartShareToQuoteFacadeInterface
-     */
     public function getQuoteFacade(): PersistentCartShareToQuoteFacadeInterface
     {
         return $this->getProvidedDependency(PersistentCartShareDependencyProvider::FACADE_QUOTE);

@@ -21,9 +21,6 @@ use Spryker\Client\PersistentCartShare\Zed\PersistentCartShareStub;
  */
 class PersistentCartShareFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\PersistentCartShare\Quote\QuoteReaderInterface
-     */
     public function createQuoteReader(): QuoteReaderInterface
     {
         return new QuoteReader(
@@ -31,17 +28,11 @@ class PersistentCartShareFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\PersistentCartShare\Zed\PersistentCartShareStub
-     */
     public function createZedPersistentCartShareStub(): PersistentCartShareStub
     {
         return new PersistentCartShareStub($this->getZedRequestClient());
     }
 
-    /**
-     * @return \Spryker\Client\PersistentCartShare\CartShareOption\CartShareOptionReaderInterface
-     */
     public function createCartShareOptionReader(): CartShareOptionReaderInterface
     {
         return new CartShareOptionReader(
@@ -57,17 +48,11 @@ class PersistentCartShareFactory extends AbstractFactory
         return $this->getProvidedDependency(PersistentCartShareDependencyProvider::PLUGINS_CART_SHARE_OPTION);
     }
 
-    /**
-     * @return \Spryker\Client\PersistentCartShare\Dependency\Client\PersistentCartShareToResourceShareClientInterface
-     */
     public function getResourceShareClient(): PersistentCartShareToResourceShareClientInterface
     {
         return $this->getProvidedDependency(PersistentCartShareDependencyProvider::CLIENT_RESOURCE_SHARE);
     }
 
-    /**
-     * @return \Spryker\Client\PersistentCartShare\Dependency\Client\PersistentCartShareToZedRequestClientInterface
-     */
     public function getZedRequestClient(): PersistentCartShareToZedRequestClientInterface
     {
         return $this->getProvidedDependency(PersistentCartShareDependencyProvider::CLIENT_ZED_REQUEST);

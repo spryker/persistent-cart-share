@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\ResourceShareRequestTransfer;
 
 interface QuoteReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function getPreviewQuoteResourceShare(ResourceShareRequestTransfer $resourceShareRequestTransfer): QuoteResponseTransfer;
 }

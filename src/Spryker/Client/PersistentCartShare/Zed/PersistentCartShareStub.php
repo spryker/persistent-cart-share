@@ -18,19 +18,11 @@ class PersistentCartShareStub implements PersistentCartShareStubInterface
      */
     protected $zedRequestClient;
 
-    /**
-     * @param \Spryker\Client\PersistentCartShare\Dependency\Client\PersistentCartShareToZedRequestClientInterface $zedRequestClient
-     */
     public function __construct(PersistentCartShareToZedRequestClientInterface $zedRequestClient)
     {
         $this->zedRequestClient = $zedRequestClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function getPreviewQuoteResourceShare(ResourceShareRequestTransfer $resourceShareRequestTransfer): QuoteResponseTransfer
     {
         /** @var \Generated\Shared\Transfer\QuoteResponseTransfer $quoteResponseTransfer */

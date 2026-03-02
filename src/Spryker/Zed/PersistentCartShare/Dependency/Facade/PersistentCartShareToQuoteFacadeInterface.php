@@ -19,10 +19,5 @@ interface PersistentCartShareToQuoteFacadeInterface
      */
     public function findQuoteById($idQuote): QuoteResponseTransfer;
 
-   /**
-    * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-    *
-    * @return bool
-    */
     public function isQuoteLocked(QuoteTransfer $quoteTransfer): bool;
 }

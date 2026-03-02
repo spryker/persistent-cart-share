@@ -18,19 +18,11 @@ class QuoteReader implements QuoteReaderInterface
      */
     protected $zedPersistentCartShareStub;
 
-    /**
-     * @param \Spryker\Client\PersistentCartShare\Zed\PersistentCartShareStubInterface $zedPersistentCartShareStub
-     */
     public function __construct(PersistentCartShareStubInterface $zedPersistentCartShareStub)
     {
         $this->zedPersistentCartShareStub = $zedPersistentCartShareStub;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function getPreviewQuoteResourceShare(ResourceShareRequestTransfer $resourceShareRequestTransfer): QuoteResponseTransfer
     {
         return $this->zedPersistentCartShareStub->getPreviewQuoteResourceShare($resourceShareRequestTransfer);

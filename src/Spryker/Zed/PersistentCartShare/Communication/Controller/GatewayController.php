@@ -17,11 +17,6 @@ use Spryker\Zed\Kernel\Communication\Controller\AbstractGatewayController;
  */
 class GatewayController extends AbstractGatewayController
 {
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function getPreviewQuoteResourceShareAction(ResourceShareRequestTransfer $resourceShareRequestTransfer): QuoteResponseTransfer
     {
         return $this->getFacade()->getPreviewQuoteResourceShare($resourceShareRequestTransfer);

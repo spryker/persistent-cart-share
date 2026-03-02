@@ -27,11 +27,6 @@ class PersistentCartShareDependencyProvider extends AbstractBundleDependencyProv
      */
     public const FACADE_QUOTE = 'FACADE_QUOTE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -41,11 +36,6 @@ class PersistentCartShareDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addQuoteFacade(Container $container): Container
     {
         $container->set(static::FACADE_QUOTE, function (Container $container) {
@@ -55,11 +45,6 @@ class PersistentCartShareDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addResourceShareFacade(Container $container): Container
     {
         $container->set(static::FACADE_RESOURCE_SHARE, function (Container $container) {

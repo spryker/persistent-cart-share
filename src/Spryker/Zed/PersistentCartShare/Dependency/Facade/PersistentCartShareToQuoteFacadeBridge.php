@@ -35,11 +35,6 @@ class PersistentCartShareToQuoteFacadeBridge implements PersistentCartShareToQuo
         return $this->quoteFacade->findQuoteById($idQuote);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     public function isQuoteLocked(QuoteTransfer $quoteTransfer): bool
     {
         return $this->quoteFacade->isQuoteLocked($quoteTransfer);

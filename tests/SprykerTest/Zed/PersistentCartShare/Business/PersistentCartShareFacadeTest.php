@@ -81,9 +81,6 @@ class PersistentCartShareFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGetQuoteForPreviewShouldReturnQuoteTransferWhenQuoteIsFoundAndSharedForPreview(): void
     {
         // Arrange
@@ -101,9 +98,6 @@ class PersistentCartShareFacadeTest extends Unit
         $this->assertNotNull($quoteResponseTransfer->getQuoteTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testGetQuoteForPreviewShouldReturnErrorMessageWhenResourceShareIsNotFoundByUuid(): void
     {
         // Arrange
@@ -124,9 +118,6 @@ class PersistentCartShareFacadeTest extends Unit
         ));
     }
 
-    /**
-     * @return void
-     */
     public function testGetQuoteForPreviewShouldReturnErrorMessageWhenQuoteIsSharedButExpired(): void
     {
         // Arrange
@@ -146,9 +137,6 @@ class PersistentCartShareFacadeTest extends Unit
         ));
     }
 
-    /**
-     * @return void
-     */
     public function testGetQuoteForPreviewShouldReturnErrorMessageWhenQuoteIdIsIncorrect(): void
     {
         // Arrange
@@ -170,9 +158,6 @@ class PersistentCartShareFacadeTest extends Unit
         ));
     }
 
-    /**
-     * @return void
-     */
     public function testGetQuoteForPreviewShouldReturnErrorMessageWhenQuoteIsSharedButNotForPreview(): void
     {
         // Arrange
@@ -194,12 +179,6 @@ class PersistentCartShareFacadeTest extends Unit
         ));
     }
 
-    /**
-     * @param array $resourceShareSeedData
-     * @param array $resourceShareDataSeedData
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareTransfer
-     */
     protected function createPreviewResourceShare(array $resourceShareSeedData = [], array $resourceShareDataSeedData = []): ResourceShareTransfer
     {
         $customerTransfer = $this->tester->haveCustomer();
@@ -226,9 +205,6 @@ class PersistentCartShareFacadeTest extends Unit
         return $resourceShareTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ResourceShareTransfer
-     */
     protected function createExpiredResourceShare(): ResourceShareTransfer
     {
         $resourceShareTransfer = (new ResourceShareBuilder([
@@ -243,12 +219,6 @@ class PersistentCartShareFacadeTest extends Unit
         return (new ResourceShareTransfer())->fromArray($resourceShareEntity->toArray(), true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteResponseTransfer $quoteResponseTransfer
-     * @param string $expectedErrorMessage
-     *
-     * @return bool
-     */
     protected function hasErrorMessage(QuoteResponseTransfer $quoteResponseTransfer, string $expectedErrorMessage): bool
     {
         $quoteResponseTransfer->requireErrors();
